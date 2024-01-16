@@ -1,6 +1,6 @@
 
 ContextMap LinaresAlquiler {
-    contains CatalogoProductos 
+    contains GestionVehiculos 
     contains GestionInventario 
     contains ServiciosFotocopias 
     contains ProcesamientoPedidos 
@@ -9,22 +9,22 @@ ContextMap LinaresAlquiler {
     contains GestionVentas 
     contains Facturacion 
 
-    CatalogoProductos [SK]<->[SK] GestionInventario
-    CatalogoProductos [SK]<->[SK] ProcesamientoPedidos
-    CatalogoProductos [SK]<->[SK] GestionVentas
+    GestionVehiculos [SK]<->[SK] GestionInventario
+    GestionVehiculos [SK]<->[SK] ProcesamientoPedidos
+    GestionVehiculos [SK]<->[SK] GestionVentas
     ProcesamientoPedidos [SK]<->[SK] GestionClientes
     GestionVentas [SK]<->[SK] ServiciosFotocopias
     GestionVentas [SK]<->[SK] ServiciosEntrega
     GestionVentas [SK]<->[SK] Facturacion
 }
 
-BoundedContext CatalogoProductos {
-    Module catalogo {
-        basePackage = com.ejemplo.tienda.catalogo
+BoundedContext GestionVehiculos {
+    Module vehiculos {
+        basePackage = com.ejemplo.tienda.vehiculos
 
-        Aggregate CatalogoProductos  {
-            Entity Producto
-            ValueObject DetallesProducto
+        Aggregate GestionVehiculos  {
+            Entity Vehiculo
+            ValueObject DetallesVehiculo
            
         }
     }
