@@ -2,9 +2,13 @@
 ContextMap LinaresAlquiler {
     contains GestionVehiculos 
     contains GestionAlquileres
+    contains GestionPagos
+    contains GestionAuntenticacionCliente 
 
 
     GestionVehiculos [SK]<->[SK] GestionAlquileres
+    GestionVehiculos [SK]<->[SK] GestionPagos
+    GestionPagos  [SK]<->[SK] GestionAlquileres
 
 }
 
@@ -22,11 +26,33 @@ BoundedContext GestionVehiculos {
 
 BoundedContext GestionAlquileres {
     Module alquiler {
-        basePackage = com.ejemplo.tienda.inventario
+        basePackage = com.ejemplo.tienda.alquiler
 
         Aggregate GestionAlquileres  {
             Entity Alquiler
             ValueObject DetallesAlquiler
                    }
+    }
+}
+
+BoundedContext GestionPagos {
+    Module pagos {
+        basePackage = com.ejemplo.tienda.pagos
+
+        Aggregate GestionPagos  {
+            Entity Pagos
+            ValueObject DetallesPagos
+            }
+    }
+}
+
+BoundedContext GestionAuntenticacionCliente {
+    Module auntenticacionCliente {
+        basePackage = com.ejemplo.tienda.pagos
+
+        Aggregate GestionAuntenticacionCliente  {
+            Entity LoginCliente
+            ValueObject DetallesLoginCliente
+            }
     }
 }
