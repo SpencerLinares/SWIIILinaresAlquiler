@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package com.ejemplo.tienda.fotocopias.fotocopias {
+	package "'ServiciosFotocopias' Aggregate" <<Rectangle>> {
+		class Copiadora <<(E,DarkSeaGreen) Entity>> {
+		}
+		class DetallesCopia <<(V,DarkSeaGreen) Value Object>> {
+		}
+	}
+}
+
+
+@enduml

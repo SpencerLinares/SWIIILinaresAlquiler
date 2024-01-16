@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package com.ejemplo.tienda.facturacion.facturacion {
+	package "'Facturacion' Aggregate" <<Rectangle>> {
+		class Factura <<(E,DarkSeaGreen) Entity>> {
+		}
+		class DetallesFactura <<(V,DarkSeaGreen) Value Object>> {
+		}
+	}
+}
+
+
+@enduml

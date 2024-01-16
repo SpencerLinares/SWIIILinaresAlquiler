@@ -1,7 +1,7 @@
 
 ContextMap LinaresAlquiler {
     contains GestionVehiculos 
-    contains GestionInventario 
+    contains GestionAlquileres
     contains ServiciosFotocopias 
     contains ProcesamientoPedidos 
     contains GestionClientes 
@@ -9,7 +9,7 @@ ContextMap LinaresAlquiler {
     contains GestionVentas 
     contains Facturacion 
 
-    GestionVehiculos [SK]<->[SK] GestionInventario
+    GestionVehiculos [SK]<->[SK] GestionAlquileres
     GestionVehiculos [SK]<->[SK] ProcesamientoPedidos
     GestionVehiculos [SK]<->[SK] GestionVentas
     ProcesamientoPedidos [SK]<->[SK] GestionClientes
@@ -30,13 +30,13 @@ BoundedContext GestionVehiculos {
     }
 }
 
-BoundedContext GestionInventario {
-    Module inventario {
+BoundedContext GestionAlquileres {
+    Module alquiler {
         basePackage = com.ejemplo.tienda.inventario
 
-        Aggregate GestionInventario  {
-            Entity ProductoInventario
-            ValueObject DetallesInventario
+        Aggregate GestionAlquileres  {
+            Entity Alquiler
+            ValueObject DetallesAlquiler
                    }
     }
 }

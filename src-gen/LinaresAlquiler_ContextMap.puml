@@ -1,0 +1,30 @@
+@startuml
+
+skinparam componentStyle uml2
+
+component [GestionVehiculos]
+component [GestionInventario]
+component [ServiciosFotocopias]
+component [ProcesamientoPedidos]
+component [GestionClientes]
+component [ServiciosEntrega]
+component [GestionVentas]
+component [Facturacion]
+
+[GestionVehiculos]<-->[GestionInventario] : Shared Kernel
+
+[GestionVehiculos]<-->[ProcesamientoPedidos] : Shared Kernel
+
+[GestionVehiculos]<-->[GestionVentas] : Shared Kernel
+
+[ProcesamientoPedidos]<-->[GestionClientes] : Shared Kernel
+
+[GestionVentas]<-->[ServiciosFotocopias] : Shared Kernel
+
+[GestionVentas]<-->[ServiciosEntrega] : Shared Kernel
+
+[GestionVentas]<-->[Facturacion] : Shared Kernel
+
+
+
+@enduml

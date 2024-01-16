@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package com.ejemplo.tienda.clientes.clientes {
+	package "'GestionClientes' Aggregate" <<Rectangle>> {
+		class Cliente <<(E,DarkSeaGreen) Entity>> {
+		}
+		class DetallesCliente <<(V,DarkSeaGreen) Value Object>> {
+		}
+	}
+}
+
+
+@enduml

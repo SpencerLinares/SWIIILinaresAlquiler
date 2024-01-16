@@ -1,0 +1,15 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package com.ejemplo.tienda.pedidos.pedidos {
+	package "'ProcesamientoPedidos' Aggregate" <<Rectangle>> {
+		class Pedido <<(E,DarkSeaGreen) Entity>> {
+		}
+		class DetallesPedido <<(V,DarkSeaGreen) Value Object>> {
+		}
+	}
+}
+
+
+@enduml
