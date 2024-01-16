@@ -1,5 +1,5 @@
 
-ContextMap TiendaUtilesEscolaresMap {
+ContextMap LinaresAlquiler {
     contains CatalogoProductos 
     contains GestionInventario 
     contains ServiciosFotocopias 
